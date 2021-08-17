@@ -5,14 +5,14 @@
 //// Sets a Default Profile Photo
 add_filter( 'avatar_defaults', 'default_gravatar' );
 function default_gravatar ($avatar_defaults) {
-	$myavatar = home_url() .'/wp-content/themes/Divi-child/favicon.jpg';
-	$avatar_defaults[$myavatar] = "First Due Construction Gravatar";
+	$myavatar = home_url() .'/wp-content/themes/theme-child/favicon.jpg';
+	$avatar_defaults[$myavatar] = "<Client Name> Gravatar";
 	return $avatar_defaults;
 }
 //// Sets Custom Footer on Admin Side
 add_filter('admin_footer_text', 'change_admin_footer');
 function change_admin_footer() {
-	echo '<span id="footer-note">Copyright ' . date('Y') . ' <a href="'. home_url() .'" target="_blank">First Due Construction, LLC</a>.</span>';
+	echo '<span id="footer-note">Copyright ' . date('Y') . ' <a href="'. home_url() .'" target="_blank"><Client Name></a>.</span>';
 }
 //// Loads Child Stylesheet
 add_action( 'wp_enqueue_scripts', 'load_stylesheets');
